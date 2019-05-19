@@ -48,7 +48,7 @@ public class PlayerHealth : MonoBehaviour
 
 
         //die
-        if (healthPoints <= 0)
+        if (healthPoints <= 0 || stealthPoints <= 0)
             SceneManager.LoadScene(0);
     }
 
