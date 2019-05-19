@@ -55,7 +55,7 @@ public class TurretController : MonoBehaviour
 
             else
             {
-                muzzle.LookAt(target.position);
+                muzzle.LookAt(target.position + new Vector3(0,0.4f,0));
                 timer += Time.deltaTime;
                 if (timer >= 1)
                 {
