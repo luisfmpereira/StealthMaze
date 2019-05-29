@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 2602953766681084536}
   m_Layer: 0
   m_Name: Turret_v3
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,8 +142,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Size: {x: 1, y: 2.3659136, z: 1}
+  m_Center: {x: 0, y: 1.1829568, z: 0}
 --- !u!1 &3618561971228326268
 GameObject:
   m_ObjectHideFlags: 0

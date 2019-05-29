@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1943158493110314132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6505667414654655740}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6505667414654655740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943158493110314132}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6151294214218591777}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6151294214218591781
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,6 +45,7 @@ GameObject:
   - component: {fileID: 741080584172273955}
   - component: {fileID: 7177871322098437876}
   - component: {fileID: 8888329657505780671}
+  - component: {fileID: 7455262921765619258}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -34,6 +65,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6523189765738276686}
+  - {fileID: 6505667414654655740}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -149,6 +181,23 @@ MonoBehaviour:
   runStealthHit: 10
   camStealthHit: 20
   stealthBar: {fileID: 0}
+--- !u!114 &7455262921765619258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151294214218591781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f152ed6a53ff3d4da4dedfb60218d04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzle: {fileID: 6505667414654655740}
+  bulletPrefab: {fileID: 2910239923277852960, guid: 700c6aa58e772da46a6279bbbb280c78,
+    type: 3}
+  bulletInitialForce: 500
+  cooldown: 0
 --- !u!1 &6657396301139703307
 GameObject:
   m_ObjectHideFlags: 0

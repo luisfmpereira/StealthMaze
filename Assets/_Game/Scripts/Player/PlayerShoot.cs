@@ -8,7 +8,7 @@ public class PlayerShoot : MonoBehaviour
 
     public Transform muzzle;
     public Rigidbody bulletPrefab;
-    public float bulletInitialForce = 10;
+    public float bulletInitialForce = 250;
     public float cooldown;
     float maxCooldown;
 
