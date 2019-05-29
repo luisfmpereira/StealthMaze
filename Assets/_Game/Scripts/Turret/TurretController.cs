@@ -18,9 +18,13 @@ public class TurretController : MonoBehaviour
     private Transform trans;
 
     private Transform target;
+    public Light spotLight;
+    public bool isStunned;
+    private BoxCollider collider;
 
     void Start()
     {
+        collider = GetComponent<BoxCollider>();
         targetInRange = false;
         canAttack = false;
         timer = 0;
@@ -30,38 +34,41 @@ public class TurretController : MonoBehaviour
 
     void Update()
     {
-        mr.material.color = combatStageColors[currentCombatStage];
-
-        if (!targetInRange)
+        if (!isStunned)
         {
-            trans.Rotate(0, rotSpeed * Time.deltaTime, 0);
-        }
-        else
-        {
-            trans.LookAt(target.position);
-            trans.eulerAngles = new Vector3(0, trans.eulerAngles.y, 0);
+            mr.material.color = combatStageColors[currentCombatStage];
 
-            if (!canAttack)
+            if (!targetInRange)
             {
-                timer += Time.deltaTime;
-                if (timer >= timeToChange)
-                {
-                    currentCombatStage = 2;
-                    timer = 0;
-                    canAttack = true;
-                    return;
-                }
+                trans.Rotate(0, rotSpeed * Time.deltaTime, 0);
             }
-
             else
             {
-                muzzle.LookAt(target.position + new Vector3(0,0.4f,0));
-                timer += Time.deltaTime;
-                if (timer >= 1)
+                trans.LookAt(target.position);
+                trans.eulerAngles = new Vector3(0, trans.eulerAngles.y, 0);
+
+                if (!canAttack)
                 {
-                    timer = 0;
-                    Rigidbody b = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation) as Rigidbody;
-                    b.AddForce(muzzle.forward * bulletInitialForce);
+                    timer += Time.deltaTime;
+                    if (timer >= timeToChange)
+                    {
+                        currentCombatStage = 2;
+                        timer = 0;
+                        canAttack = true;
+                        return;
+                    }
+                }
+
+                else
+                {
+                    muzzle.LookAt(target.position + new Vector3(0, 0.4f, 0));
+                    timer += Time.deltaTime;
+                    if (timer >= 1)
+                    {
+                        timer = 0;
+                        Rigidbody b = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation) as Rigidbody;
+                        b.AddForce(muzzle.forward * bulletInitialForce);
+                    }
                 }
             }
         }
@@ -91,6 +98,21 @@ public class TurretController : MonoBehaviour
     }
 
 
+    public void Stunned()
+    {
+        StartCoroutine(WaitForStun());
+    }
+
+    IEnumerator WaitForStun()
+    {
+        isStunned = true;
+        collider.enabled = false;
+        spotLight.enabled = false;
+        yield return new WaitForSeconds(5);
+        isStunned = false;
+        collider.enabled = true;
+        spotLight.enabled = true;
+    }
 
 
 }
