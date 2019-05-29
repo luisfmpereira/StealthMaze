@@ -18,7 +18,4 @@ public class SecurityCamStunned : MonoBehaviour
         if (hit.gameObject.CompareTag("PlayerBullet"))
             mainScript.Stunned();
     }
-
-
-
 }

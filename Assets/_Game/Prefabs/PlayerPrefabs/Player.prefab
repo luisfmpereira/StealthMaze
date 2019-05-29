@@ -198,6 +198,9 @@ MonoBehaviour:
     type: 3}
   bulletInitialForce: 500
   cooldown: 0
+  maxCooldown: 3
+  reloadBar: {fileID: 0}
+  reloadText: {fileID: 0}
 --- !u!1 &6657396301139703307
 GameObject:
   m_ObjectHideFlags: 0
