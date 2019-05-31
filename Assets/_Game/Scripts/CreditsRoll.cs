@@ -9,7 +9,7 @@ public class CreditsRoll : MonoBehaviour
 
     private void Update()
     {
-        if (Input.anyKey || Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
             LoadGame();
     }
 
