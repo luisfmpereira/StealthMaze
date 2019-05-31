@@ -289,6 +289,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5752725207449542473, guid: e08add61abf34134eb357b601ffe0b45,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.49
+      objectReference: {fileID: 0}
     - target: {fileID: 2542969828393962593, guid: e08add61abf34134eb357b601ffe0b45,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -319,8 +324,7 @@ PrefabInstance:
       propertyPath: playerHealthPoints
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5752725207951243921, guid: e08add61abf34134eb357b601ffe0b45, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e08add61abf34134eb357b601ffe0b45, type: 3}
 --- !u!1 &9205092495109848635 stripped
 GameObject:
