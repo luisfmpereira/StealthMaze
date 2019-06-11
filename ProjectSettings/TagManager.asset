@@ -9,6 +9,7 @@ TagManager:
   - EnemyBullet
   - StealthDamage
   - Enemy
+  - Ignore
   layers:
   - Default
   - TransparentFX
