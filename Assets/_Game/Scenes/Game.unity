@@ -5091,7 +5091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunshot: {fileID: 8300000, guid: b3f210289cf8f4473a7e2fcf62618a29, type: 3}
-  collect: {fileID: 8300000, guid: 8badc0da1325a4aa69ed64a618522920, type: 3}
+  collect: {fileID: 8300000, guid: bd895972fc816417db3cadc6b52b8f39, type: 3}
 --- !u!4 &1309539429
 Transform:
   m_ObjectHideFlags: 0
