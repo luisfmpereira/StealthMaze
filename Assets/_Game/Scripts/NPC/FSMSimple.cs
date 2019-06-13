@@ -44,9 +44,15 @@ public class FSMSimple : MonoBehaviour
 
     public Image playerHealthPoints;
 
+    public AudioSource source;
+    public AudioController audioControllerInstance;
+
     #region Unity Functions
     public void Start()
     {
+        source = GetComponent<AudioSource>();
+        audioControllerInstance = FindObjectOfType<AudioController>();
+
         currentWaypoint = 0;
         timer = 0;
         agent = GetComponent<NavMeshAgent>();
@@ -149,9 +155,11 @@ public class FSMSimple : MonoBehaviour
             {
                 timer = 0;
 
+
                 Rigidbody b = GameObject.Instantiate(bullet, muzzle.position, muzzle.rotation) as Rigidbody;
                 b.AddForce(muzzle.forward * bulletInitialForce);
-                //GameObject.FindWithTag("soundcontrol").GetComponent<SoundControl>().PlaySound("shoot");
+
+                audioControllerInstance.PlayGunShot(source);
 
                 numberOfShoots++;
                 if (numberOfShoots >= maxNumberOfShoots)

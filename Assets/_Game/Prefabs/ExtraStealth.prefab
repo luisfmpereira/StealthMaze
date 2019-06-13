@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 1618144984661986964}
   - component: {fileID: 1618144984661986967}
   - component: {fileID: 1618144984661986966}
-  - component: {fileID: 7967443263343448776}
+  - component: {fileID: 2900438525744593317}
   - component: {fileID: 934265277866625345}
   m_Layer: 0
-  m_Name: Collectible
+  m_Name: ExtraStealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618144984661986961}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.778, y: 0.88, z: 4.557}
-  m_LocalScale: {x: 1, y: 0.1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618144984661986961}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 5f47da8e7a8af5645a675a62f3e96667, type: 3}
 --- !u!23 &1618144984661986964
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 50db3e636d8d6024383520d66eced031, type: 2}
+  - {fileID: 2100000, guid: 4370851833a7aef41af459e0ed3ff774, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trans: {fileID: 0}
   rotSpeed: 25
---- !u!114 &7967443263343448776
+--- !u!114 &2900438525744593317
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,9 +118,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1618144984661986961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dde896bef6537a40864870664b5b52a, type: 3}
+  m_Script: {fileID: 11500000, guid: a278c82cb3f9b50469bd755f983999b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 0}
+  audioControllerInstance: {fileID: 0}
+  source: {fileID: 0}
 --- !u!82 &934265277866625345
 AudioSource:
   m_ObjectHideFlags: 0

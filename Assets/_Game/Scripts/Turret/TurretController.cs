@@ -22,8 +22,13 @@ public class TurretController : MonoBehaviour
     public bool isStunned;
     private BoxCollider collider;
 
+    public AudioSource source;
+    public AudioController audioControllerInstance;
+
     void Start()
     {
+        source = GetComponent<AudioSource>();
+        audioControllerInstance = FindObjectOfType<AudioController>();
         collider = GetComponent<BoxCollider>();
         targetInRange = false;
         canAttack = false;
@@ -68,6 +73,8 @@ public class TurretController : MonoBehaviour
                         timer = 0;
                         Rigidbody b = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation) as Rigidbody;
                         b.AddForce(muzzle.forward * bulletInitialForce);
+
+                        audioControllerInstance.PlayGunShot(source);
                     }
                 }
             }

@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static LevelManager;
 
-public class CollectibleHandler : MonoBehaviour
+public class ExtraLife : MonoBehaviour
 {
 
+    public PlayerHealth health;
     public AudioController audioControllerInstance;
     public AudioSource source;
 
@@ -13,17 +13,16 @@ public class CollectibleHandler : MonoBehaviour
     {
         source = GetComponent<AudioSource>();
         audioControllerInstance = FindObjectOfType<AudioController>();
-
+        health = FindObjectOfType<PlayerHealth>();
     }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             audioControllerInstance.PlayCollect(source);
-            Instance.currentCollectibles++;
+            health.healthPoints++;
             Destroy(this.gameObject, 0.1f);
         }
-
     }
-
 }

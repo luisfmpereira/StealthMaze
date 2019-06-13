@@ -33,7 +33,6 @@ public class PlayerHealth : MonoBehaviour
     {
         //healthbar fill
         stealthBar.fillAmount = stealthPoints / maxStealth;
-        healthBar.fillAmount = healthPoints / healthMax;
 
         //recover damage
         if (!takingDamage && stealthPoints <= maxStealth)
@@ -56,6 +55,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.gameObject.tag == "EnemyBullet")
         {
+            healthBar.fillAmount = healthPoints / healthMax;
             Destroy(other.gameObject);
             healthPoints--;
 
